@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>绘制船</title>
+</head>
+
+<body>
+    <canvas id="boatCanvas" width="300" height="300"></canvas>
+
+    <script>
+        const canvas = document.getElementById('boatCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 绘制船体
+        ctx.fillStyle = 'brown';
+        ctx.beginPath();
+        ctx.moveTo(50, 250);
+        ctx.quadraticCurveTo(150, 150, 250, 250); // 船体曲线
+        ctx.lineTo(250, 300);
+        ctx.lineTo(50, 300);
+        ctx.closePath();
+        ctx.fill();
+
+        // 绘制船帆
+        ctx.fillStyle = 'white';
+        ctx.beginPath();
+        ctx.moveTo(150, 50);
+        ctx.lineTo(150, 200); // 船帆杆
+        ctx.lineTo(250, 150); // 船帆
+        ctx.lineTo(150, 100); // 船帆
+        ctx.closePath();
+        ctx.fill();
+    </script>
+</body>
+
+</html>

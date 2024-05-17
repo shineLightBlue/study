@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const o = {
+            cat: {
+                name: 'tom',
+                sayHi() {
+                    console.log('where is jerry')
+                }
+            }
+        }
+        console.log(o.dog)
+        // 原来：
+        console.log(o.dog && o.dog.name)
+        // 使用可选链操作符：
+        console.log(o.dog?.name)
+    </script>
+</body>
+
+</html>

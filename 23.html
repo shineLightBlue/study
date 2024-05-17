@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"> <input type="text" id="message-input">
+        <p id="message-display"></p>
+    </div>
+    <script>
+        // 定义一个视图模型对象
+        var viewModel = { message: "" };
+        // 绑定视图和模型
+        // 通过DOM事件监听视图变化，更新模型数据
+        document
+            .getElementById("message-input")
+            .addEventListener("input", function (event) {
+                viewModel.message = event.target.value;
+            });
+        // 监听到模型数据发送改变，通知视图更新
+        // 监听模型的变化，更新视图
+        let obj =Object.defineProperty(viewModel, "message", {
+            get: function () {
+                return this._message;
+            },
+            set: function (newValue) {
+                this._message = newValue;
+                document.getElementById("message-display").textContent = newValue;
+                console.log(obj)
+            },
+        });
+        console.log(obj)
+    </script>
+</body>
+
+</html>

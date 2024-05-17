@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const array = [
+        {
+          id: 101,
+          name: "菜单1",
+          icon: "el-icon-platform-eleme",
+          path: "/m1",
+          pid: 0,
+          component: null,
+        },
+        {
+          id: 102,
+          name: "菜单2",
+          icon: "el-icon-delete-solid",
+          path: "/m2",
+          pid: 0,
+          component: null,
+        },
+        {
+          id: 103,
+          name: "菜单3",
+          icon: "el-icon-s-tools",
+          path: "/m3",
+          pid: 0,
+          component: null,
+        },
+        {
+          id: 104,
+          name: "菜单4",
+          icon: "el-icon-user-solid",
+          path: "/m4",
+          pid: 0,
+          component: "M4View.vue",
+        },
+        {
+          id: 105,
+          name: "子项1",
+          icon: "el-icon-s-goods",
+          path: "/m1/c1",
+          pid: 101,
+          component: "C1View.vue",
+        },
+        {
+          id: 106,
+          name: "子项2",
+          icon: "el-icon-menu",
+          path: "/m1/c2",
+          pid: 101,
+          component: "C2View.vue",
+        },
+        {
+          id: 107,
+          name: "子项3",
+          icon: "el-icon-s-marketing",
+          path: "/m2/c3",
+          pid: 102,
+          component: "C3View.vue",
+        },
+        {
+          id: 108,
+          name: "子项4",
+          icon: "el-icon-s-platform",
+          path: "/m2/c4",
+          pid: 102,
+          component: "C4View.vue",
+        },
+        {
+          id: 109,
+          name: "子项5",
+          icon: "el-icon-picture",
+          path: "/m2/c5",
+          pid: 102,
+          component: "C5View.vue",
+        },
+        {
+          id: 110,
+          name: "子项6",
+          icon: "el-icon-upload",
+          path: "/m3/c6",
+          pid: 103,
+          component: "C6View.vue",
+        },
+        {
+          id: 111,
+          name: "子项7",
+          icon: "el-icon-s-promotion",
+          path: "/m3/c7",
+          pid: 103,
+          component: "C7View.vue",
+        },
+      ];
+      const map = new Map();
+      for (const { id, name, pid } of array) {
+        map.set(id, { value: id, label: name, pid: pid });
+      }
+      console.log(map.values());
+      const t = [];
+      for (const obj of map.values()) {
+        const parent = map.get(obj.pid);
+        console.log(parent);
+        if (parent !== undefined) {
+          parent.children ??= [];
+          parent.children.push(obj);
+        } else {
+          t.push(obj);
+        }
+      }
+      console.log(t);
+    </script>
+  </body>
+</html>

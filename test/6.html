@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+            static leg =2
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            do(){
+                console.log(this.name+'doing')
+            }
+            static run(){
+                console.log('runing')
+            }
+        }
+        let p = new Person('高启强',20)
+        p.do()
+        console.log(Person.leg)
+        Person.run()
+        function Human(){
+        }
+        Human.a =20
+        Human.say=function(){
+            console.log('haha')
+        }
+        console.log(Human.a)
+        Human.say()
+        console.log(Human)
+    </script>
+</body>
+</html>

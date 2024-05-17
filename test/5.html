@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(){
+            // return []
+            return 1
+        }
+        let f = new fn()
+        console.log(f)
+        function Person(){
+            this.score=20
+        }
+        function Student(){
+            return new Person()
+        }
+        let s = new Student()
+        console.log(s)
+        function Car(brand,type){
+            this.brand=brand
+            this.type=type
+        }
+        Car.prototype.lt=4
+        function Bmw(price){
+            this.price = price
+        }
+        Bmw.prototype = Car.prototype
+        let bc = new Bmw(40)
+        console.log(bc)
+        console.log(bc.__proto__)
+    </script>
+</body>
+</html>

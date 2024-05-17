@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Pig(leg =4){
+            this.leg = leg
+        }
+        Pig.prototype = {
+            sleep:function(){
+                console.log('特能睡')
+            }
+        }
+        let peiqi = new Pig()
+        peiqi.sleep()
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        Person.prototype.score=20;
+        Person.prototype.do = function(){
+            console.log(this.name+'doing')
+        }
+        let p = new Person('旺财',20)
+        function Student(idCard){
+            this.idCard = idCard
+        }
+        Student.prototype = p
+        console.log(Student.prototype)
+        let s = new Student('9527')
+        console.log(s.score)
+        s.do()
+    </script>
+</body>
+</html>

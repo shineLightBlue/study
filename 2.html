@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let obj = {
+      name: "ken",
+      age: 26,
+      major: "light",
+      nums: [10, 20, 30],
+    };
+    obj["nums"][0] = 100;
+    let newObj = {};
+    Object.assign(newObj, obj);
+    console.log(newObj === obj);
+    console.log(newObj["nums"]);
+    console.log(obj["nums"]);
+    console.log(newObj["nums"] == obj["nums"])
+  </script>
+</body>
+
+</html>
